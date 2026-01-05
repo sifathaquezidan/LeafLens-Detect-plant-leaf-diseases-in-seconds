@@ -1,12 +1,19 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LeafLens • Plant Disease Detector</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="./styles.css" />
 </head>
 
@@ -23,13 +30,14 @@
       <div class="logo" aria-hidden="true">🍃</div>
       <div>
         <div class="brand-title">LeafLens</div>
-        <div class="brand-sub">Plant disease detection (PC + Mobile)</div>
+        <div class="brand-sub">Plant disease detection </div>
       </div>
     </div>
 
     <div class="pill" id="apiStatus" title="Backend connection status">
       <span class="dot"></span><span class="txt">Checking server…</span>
     </div>
+
   </header>
 
   <main class="shell">
@@ -42,17 +50,21 @@
       <div class="actions">
         <label class="btn primary">
           <input id="fileInput" type="file" accept="image/*" hidden />
-          <span>Upload photo</span>
+          <i class="fas fa-upload"></i>
+          <span>Upload Photo</span>
         </label>
 
         <button class="btn" id="openCameraBtn" type="button">
-          Use camera
+          <i class="fas fa-camera"></i>
+          <span>Use Camera</span>
         </button>
 
         <button class="btn ghost" id="sampleBtn" type="button" title="Use a built-in sample image (demo)">
-          Try sample
+          <i class="fas fa-leaf"></i>
+          <span>Try Sample</span>
         </button>
       </div>
+
 
       <div class="tips">
         <div class="tip">✅ Use bright lighting</div>
@@ -128,11 +140,33 @@
     </section>
 
     <footer class="footer">
-      <div>Built with HTML • CSS • JS • FastAPI</div>
-      <div class="small">Theme: modern, plant-inspired UI</div>
+      <div class="footer-left">
+        <strong>Md. Sifat Haque Zidan</strong><br />
+        <span class="small">Leaf Disease Detection Web Application</span><br />
+        <span class="small">© 2026 • Built for Smart Agriculture</span>
+
+
+      </div>
+
+      <div class="footer-links">
+        <a href="https://wa.me/8801704703877" target="_blank" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <a href="mailto:sifatzidan@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/md-sifat-haque-zidan-1869b4278/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
     </footer>
+
+
   </main>
 
   <script src="./app.js"></script>
 </body>
+
 </html>
