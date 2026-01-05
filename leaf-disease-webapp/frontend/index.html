@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LeafLens • Plant Disease Detector</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div class="bg">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="grain"></div>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">🍃</div>
+      <div>
+        <div class="brand-title">LeafLens</div>
+        <div class="brand-sub">Plant disease detection (PC + Mobile)</div>
+      </div>
+    </div>
+
+    <div class="pill" id="apiStatus" title="Backend connection status">
+      <span class="dot"></span><span class="txt">Checking server…</span>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero card">
+      <h1>Detect plant leaf diseases in seconds.</h1>
+      <p>
+        Upload a leaf photo or take a picture with your camera. We’ll analyze it and show the predicted disease.
+      </p>
+
+      <div class="actions">
+        <label class="btn primary">
+          <input id="fileInput" type="file" accept="image/*" hidden />
+          <span>Upload photo</span>
+        </label>
+
+        <button class="btn" id="openCameraBtn" type="button">
+          Use camera
+        </button>
+
+        <button class="btn ghost" id="sampleBtn" type="button" title="Use a built-in sample image (demo)">
+          Try sample
+        </button>
+      </div>
+
+      <div class="tips">
+        <div class="tip">✅ Use bright lighting</div>
+        <div class="tip">✅ Center the leaf</div>
+        <div class="tip">✅ Avoid heavy blur</div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <section class="card preview">
+        <div class="card-head">
+          <h2>Preview</h2>
+          <div class="sub">Your selected image</div>
+        </div>
+
+        <div class="preview-wrap">
+          <img id="previewImg" alt="Preview will appear here" />
+          <div class="placeholder" id="previewPlaceholder">
+            <div class="ph-icon">🌿</div>
+            <div class="ph-title">No image yet</div>
+            <div class="ph-sub">Upload or capture a leaf photo.</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <button class="btn small" id="analyzeBtn" type="button" disabled>Analyze</button>
+          <button class="btn small ghost" id="clearBtn" type="button" disabled>Clear</button>
+        </div>
+      </section>
+
+      <section class="card result">
+        <div class="card-head">
+          <h2>Result</h2>
+          <div class="sub">Prediction output</div>
+        </div>
+
+        <div class="meter" aria-hidden="true">
+          <div class="meter-bar" id="meterBar"></div>
+        </div>
+
+        <div class="result-main">
+          <div class="label">Disease</div>
+          <div class="value" id="diseaseName">—</div>
+
+          <div class="label">Confidence</div>
+          <div class="value mono" id="confidence">—</div>
+
+          <div class="label">Top-3</div>
+          <div class="list" id="topk">—</div>
+        </div>
+
+        <div class="note">
+          This is an AI prediction — double-check if the result looks wrong.
+        </div>
+      </section>
+    </section>
+
+    <section class="card camera" id="cameraCard" hidden>
+      <div class="card-head">
+        <h2>Camera</h2>
+        <div class="sub">Take a leaf photo</div>
+      </div>
+
+      <div class="camera-wrap">
+        <video id="video" autoplay playsinline></video>
+        <canvas id="canvas" hidden></canvas>
+
+        <div class="camera-controls">
+          <button class="btn" id="captureBtn" type="button">Capture</button>
+          <button class="btn ghost" id="closeCameraBtn" type="button">Close</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>Built with HTML • CSS • JS • FastAPI</div>
+      <div class="small">Theme: modern, plant-inspired UI</div>
+    </footer>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
