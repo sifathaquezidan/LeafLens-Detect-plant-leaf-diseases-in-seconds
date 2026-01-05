@@ -167,7 +167,7 @@ It is suitable for final-year projects, capstone projects, and academic demonstr
 
 # Author
 
-Sifat Haque Zifan
+Md. Sifat Haque Zidan
 Leaf Disease Detection Web Application
 Department of Computer Science & Engineering | North South University
 
