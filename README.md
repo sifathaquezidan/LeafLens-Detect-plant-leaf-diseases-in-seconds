@@ -69,9 +69,7 @@ leaf-disease-webapp/
 Prerequisites
 
 Python 3.10 or higher
-
 Git
-
 VS Code (recommended)
 
 Backend Setup
@@ -83,11 +81,9 @@ python -m uvicorn server:app --host 127.0.0.1 --port 8000
 
 
 Backend health check:
-
 http://127.0.0.1:8000/health
 
 Frontend Setup
-
 Open the frontend folder in VS Code, right-click index.html, and choose Open with Live Server.
 
 The interface will open at:
@@ -95,16 +91,12 @@ The interface will open at:
 http://127.0.0.1:5500/index.html
 
 # Model File
-
 The trained model file is not included in the repository due to GitHub file size limits.
-
 Download the model from GitHub Releases and place it in:
-
 backend/models/
 
 
 Model file name:
-
 leaf_cnn_scripted.pt
 
 # How the System Works
